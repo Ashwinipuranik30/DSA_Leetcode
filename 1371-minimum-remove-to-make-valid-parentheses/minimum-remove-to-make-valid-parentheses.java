@@ -37,17 +37,17 @@ class Solution {
 
         }
 
-        String b ="";
+        StringBuilder b = new StringBuilder();
         for(int i=0 ; i<chars.length ;i++){
             if(chars[i]!='@'){
-                b+=chars[i];
+                b.append(chars[i]);
             }
             else{
                 continue;
             }
         }
 
-        return b;
+        return b.toString();
 
 
         
