@@ -10,26 +10,16 @@ class Solution {
         Stack<Character> stack1 = new Stack<>();
 
         for(char c : s.toCharArray()){
-            if(stack1.isEmpty()){
-                stack1.push(c);
-                freq[c-'a']--;
-                presence[c-'a']=true;
-            }
-            else if(presence[c-'a']==false){
-                while(!stack1.isEmpty() && stack1.peek()>c && freq[stack1.peek() -'a']>0){
+           freq[c-'a']--;
+           if(presence[c-'a']==true){
+            continue;
+           }
+           while(!stack1.isEmpty() && stack1.peek()>c && freq[stack1.peek() -'a']>0){
                     presence[stack1.peek() -'a']=false;
                     stack1.pop();                
-                }
-                stack1.push(c);
-                freq[c-'a']--;
-                presence[c-'a']=true;
             }
-            else{
-                freq[c-'a']--;
-            }
-            
-            
-
+            stack1.push(c);
+            presence[c-'a']=true;
         }
 
         StringBuilder a = new StringBuilder();
