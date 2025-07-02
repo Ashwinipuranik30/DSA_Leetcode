@@ -3,11 +3,9 @@ class Solution {
         Stack<Integer> stack1 = new Stack<>();
         int a=0;
         int b=0;
-        int z=0;
         for(String c : tokens){
             if( !c.equals("+") && !c.equals("-") && !c.equals("/") && !c.equals("*") ){
-                z=Integer.parseInt(c);
-                stack1.push(z);
+                stack1.push(Integer.parseInt(c));
             }
             else{
                 if(c.equals("*")){
