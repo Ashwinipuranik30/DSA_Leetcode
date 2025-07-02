@@ -8,29 +8,21 @@ class Solution {
                 stack1.push(Integer.parseInt(c));
             }
             else{
-                if(c.equals("*")){
-                    a=stack1.pop();
-                    b=stack1.pop();
-                    stack1.push(a*b);
-                
-                }
-                else if(c.equals("+")){
-                    a=stack1.pop();
-                    b=stack1.pop();
-                    stack1.push(a+b);
-                
-                }
-                if(c.equals("/")){
-                    a=stack1.pop();
-                    b=stack1.pop();
-                    stack1.push(b/a);
-                
-                }
-                if(c.equals("-")){
-                    a=stack1.pop();
-                    b=stack1.pop();
-                    stack1.push(b-a);
-                
+                a=stack1.pop();
+                b=stack1.pop();
+                switch(c){
+                    case "+":
+                        stack1.push(b+a);
+                        break;
+                    case "-":
+                        stack1.push(b-a);
+                        break;
+                    case "*":
+                        stack1.push(b*a);
+                        break;
+                    case "/":
+                        stack1.push(b/a);
+                        break;
                 }
             }
         }
