@@ -71,22 +71,13 @@ class MyCircularDeque {
     }
     
     public boolean isEmpty() {
-        if(deque.size()==0){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return deque.size()==0;
+           
         
     }
     
     public boolean isFull() {
-        if(deque.size()==maxcapacity){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return deque.size()==maxcapacity;
         
     }
 }
