@@ -8,14 +8,11 @@ class RecentCounter {
     }
     
     public int ping(int t) {
-        int count=0;
         queue1.offer(t);
-        for(int value :queue1){
-            if(value>= t-3000 && value<=t){
-                count++;
-            }
+        while(!queue1.isEmpty() && queue1.peek()<t-3000){
+            queue1.poll();
         }
-        return count;
+        return queue1.size();
         
     }
 }
