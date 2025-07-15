@@ -10,12 +10,8 @@ class Solution {
             S2+=c;
         }
 
-        if(S.equals(S2)){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return S.equals(S2) ? true : false;
+        
 
         
     }
