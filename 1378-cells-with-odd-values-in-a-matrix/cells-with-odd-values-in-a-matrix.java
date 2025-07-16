@@ -2,6 +2,7 @@ class Solution {
     public int oddCells(int m, int n, int[][] indices) {
         int[] rows= new int[m];
         int[] cols= new int[n];
+        int count =0;
 
         for(int[] a : indices){
             rows[a[0]]++;
@@ -12,26 +13,14 @@ class Solution {
 
         for(int i =0;i<finalmatrix.length;i++){
             for(int j = 0; j<finalmatrix[i].length; j++){
-                finalmatrix[i][j]=rows[i]+cols[j];
-            }
-        }
-        int count=0;
-
-
-         for(int i =0;i<finalmatrix.length;i++){
-            for(int j = 0; j<finalmatrix[i].length; j++){
-                if(finalmatrix[i][j]%2!=0){
+                if((rows[i]+cols[j])%2!=0){
                     count++;
                 };
             }
         }
 
+
         return count;
-
-
-
-
-
 
         
     }
