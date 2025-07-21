@@ -13,12 +13,7 @@ class Solution {
                 d_prem--;
             }
         }
-        if(s.charAt(s.length()-1)=='D'){
-            premutation[s.length()]=d_prem;
-        }
-        else if (s.charAt(s.length()-1)=='I'){
-            premutation[s.length()]=i_prem;
-        }
+        premutation[s.length()]=d_prem;
         
 
         return premutation;
