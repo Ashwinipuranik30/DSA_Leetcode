@@ -1,0 +1,26 @@
+class Solution {
+    public int[] diStringMatch(String s) {
+        int i_prem=0;
+        int d_prem=s.length();
+        int[] premutation =  new int[s.length()+1];
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='I'){
+                premutation[i]=i_prem;
+                i_prem++;
+            }
+            else if(s.charAt(i)=='D'){
+                premutation[i]=d_prem;
+                d_prem--;
+            }
+        }
+        if(s.charAt(s.length()-1)=='D'){
+            premutation[s.length()]=d_prem;
+        }
+        else if (s.charAt(s.length()-1)=='I'){
+            premutation[s.length()]=i_prem;
+        }
+        
+
+        return premutation;
+    }
+}
