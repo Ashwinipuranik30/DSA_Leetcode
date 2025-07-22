@@ -9,20 +9,17 @@ class Solution {
         int end=chararray.length-1;
 
         while(start<end){
-            if(!isVowel(chararray[start])){
+            while( start<end && !isVowel(chararray[start])){
                 start++;
             }
-            if(!isVowel(chararray[end])){
+            while(start<end && !isVowel(chararray[end])){
                 end--;
-            }
-            if(isVowel(chararray[start]) && isVowel(chararray[end])){
-                char temp=chararray[start];
-                chararray[start]=chararray[end];
-                chararray[end]=temp;
-                start++;
-                end--;
-            }
-  
+            }           
+            char temp=chararray[start];
+            chararray[start]=chararray[end];
+            chararray[end]=temp;
+            start++;
+            end--;  
         }
 
         String result = new String(chararray);
