@@ -3,36 +3,22 @@ class Solution {
 
         List<List<Integer>> result = new ArrayList<>();
 
-        PriorityQueue<List<Integer>> minheap = new PriorityQueue<>((list1,list2)-> list1.get(3)-list2.get(3));
+        PriorityQueue<int[]> minheap = new PriorityQueue<>(
+    (a, b) -> (nums1[a[0]] + nums2[a[1]]) - (nums1[b[0]] + nums2[b[1]])
+);
         
-        int index=0;
+    
         for(int i=0;i<nums1.length;i++){
-            List<Integer> list = new ArrayList<>();
-            list.add(nums1[i]);
-            list.add(nums2[index]);
-            list.add(index);
-            list.add(nums1[i]+nums2[index]);
-            minheap.offer(list);
+            minheap.offer(new int[] {i,0});
         }
-        int i=0;
-        while(i<k){
-            List<Integer> list1= new ArrayList<>();
-            list1=minheap.poll();
-            result.add(new ArrayList<>());
-            result.get(i).add(list1.get(0));
-            result.get(i).add(list1.get(1));
-            i++;
-            int a=list1.get(2)+1;
-            if(a<nums2.length){
-                int b=list1.get(0);
-                List<Integer> list = new ArrayList<>();
-                list.add(b);
-                list.add(nums2[a]);
-                list.add(a);
-                list.add(b+nums2[a]);
-                minheap.offer(list);
+        
+        while(k>0 && !minheap.isEmpty()){
+            int[] pair = minheap.poll();
+            result.add(Arrays.asList(nums1[pair[0]],nums2[pair[1]]));
+            if(pair[1]+1 < nums2.length){
+                minheap.offer(new int[] {pair[0],pair[1]+1});
             }
-                   
+            k--;
         }
 
         return result;
