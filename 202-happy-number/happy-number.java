@@ -1,6 +1,6 @@
 class Solution {
     public boolean isHappy(int n) {
-        if(n==1 || n==7){
+        if(n==1){
             return true;
         }
         
