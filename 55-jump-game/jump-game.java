@@ -11,6 +11,7 @@ class Solution {
             }
             max=Math.max(max,index+nums[index]);
             index++;
+            if (max >= nums.length - 1) return true;
         }
         if(max>=(nums.length-1)){
             return true;
