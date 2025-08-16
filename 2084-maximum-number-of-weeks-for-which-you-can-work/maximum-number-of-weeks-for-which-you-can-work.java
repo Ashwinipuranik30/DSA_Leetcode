@@ -9,11 +9,8 @@ class Solution {
 
         sum=sum-max;
 
-        if(milestones.length==1){
-            return 1;
-        }
-
-        else if(max-sum<=1){
+        
+        if(max-sum<=1){
             return max+sum;
         }
         else{
