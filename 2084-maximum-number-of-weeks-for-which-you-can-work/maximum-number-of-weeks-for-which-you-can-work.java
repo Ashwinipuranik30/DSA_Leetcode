@@ -13,7 +13,7 @@ class Solution {
             return 1;
         }
 
-        else if(max<=sum+1){
+        else if(max-sum<=1){
             return max+sum;
         }
         else{
