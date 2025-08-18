@@ -16,7 +16,19 @@ class Solution {
     }
     public int climbStairs(int n) {
         int[] map= new int[n+1];
-        Arrays.fill(map,-1);
-        return climb(n,map);       
+        map[0]=1;
+        map[1]=1;
+        if(n<=1){
+            return 1;
+        }
+        for(int i=2;i<map.length;i++){
+            int a = map[i-1];
+            int b=map[i-2];
+            map[i]=a+b;
+        }
+        return map[n];
+
+        //Arrays.fill(map,-1);
+        //return climb(n,map);       
     }
 }
