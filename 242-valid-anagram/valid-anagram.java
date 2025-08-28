@@ -3,7 +3,7 @@ class Solution {
         if(s.length()!=t.length()){
             return false;
         }
-        Map<Character,Integer> map1 = new HashMap<>();
+        /* Map<Character,Integer> map1 = new HashMap<>();
 
         for(int i=0;i<s.length();i++){
             map1.put( s.charAt(i) , map1.getOrDefault(s.charAt(i),0)+1 );
@@ -24,6 +24,26 @@ class Solution {
             }
         }
         return true;
+        */
+
+        int[] count = new int[26];
+
+        for(int i=0;i<s.length();i++){
+            count[s.charAt(i)-'a']++;
+        }
+
+        for(int i=0;i<t.length();i++){
+            count[t.charAt(i)-'a']--;
+        }
+
+        for(int c: count){
+            if(c!=0){
+                return false;
+            }
+        }
+        return true;
+
+
 
 
 
