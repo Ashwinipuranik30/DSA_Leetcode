@@ -1,26 +1,24 @@
 class Solution {
     public int[][] largestLocal(int[][] grid) {
 
-         int[][] maxMatrix= new int[grid[0].length-2][grid[0].length-2];
+        int n=grid.length;
+        int[][] rowMax = new int[n][n-2];
 
-         for(int i=0;i<maxMatrix[0].length;i++){
-            for(int j=0;j<maxMatrix[0].length;j++){
-                
-                int max=0;
-                for(int k=i;k<=i+2;k++){
-                    for(int v=j;v<=j+2;v++){
-                        max=Math.max(max,grid[k][v]);
-                    }
-
-                }
-                maxMatrix[i][j]=max;
-                
+        for(int i=0;i<n;i++){
+            for(int j=0; j<n-2;j++){
+                rowMax[i][j]=Math.max( grid[i][j] ,Math.max(grid[i][j+1],grid[i][j+2]));
             }
-         }
+        }
 
-         return maxMatrix;
+        int[][] answer = new int[n-2][n-2];
 
+        for(int i=0;i<n-2;i++){
+            for(int j=0;j<n-2;j++){
+                answer[i][j]=Math.max(rowMax[i][j],Math.max(rowMax[i+1][j],rowMax[i+2][j]));
+            }
+        }
 
+        return answer;
         
     }
 }
