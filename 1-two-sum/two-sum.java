@@ -7,7 +7,7 @@ class Solution {
             int a= target-nums[i];
             if(map1.containsKey(a)){
                 result[0]=map1.get(a);
-                result[1]=i;        
+                result[1]=i;       
             }
             map1.put(nums[i],i);
         }
