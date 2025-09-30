@@ -11,10 +11,7 @@ class Solution {
                 stack1.pop();                
             }
             stack1.push(i);
-            while(temperatures[i]<temperatures[stack1.peek()]){
-                stack1.push(i);
-            }
-            
+           
             
         }
 
