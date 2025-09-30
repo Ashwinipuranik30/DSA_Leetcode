@@ -1,6 +1,5 @@
 class Solution {
     public int[] dailyTemperatures(int[] temperatures) {
-
         Stack<Integer> stack1= new Stack<>();
         int[] answer = new int[temperatures.length];
         stack1.push(0);
@@ -10,8 +9,7 @@ class Solution {
                 answer[stack1.peek()]= i-stack1.peek();
                 stack1.pop();                
             }
-            stack1.push(i);
-           
+            stack1.push(i);     
             
         }
 
