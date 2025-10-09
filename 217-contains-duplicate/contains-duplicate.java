@@ -7,8 +7,7 @@ class Solution {
         }
 
         for(int key : count.keySet()){
-            int freq=count.get(key);
-            if(freq>1){
+            if(count.get(key)>1){
                 return true;
             }
         }
