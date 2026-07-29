@@ -1,1 +1,1 @@
-SELECT email FROM Person GROUP BY email Having COUNT(*)>1;
+SELECT email FROM (SELECT email, COUNT(email) AS num FROM Person GROUP BY email) AS tempTable WHERE num>1;
