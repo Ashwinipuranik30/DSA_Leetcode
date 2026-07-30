@@ -3,4 +3,4 @@
 
 
 SELECT E2.name FROM EMPLOYEE E 
-JOIN Employee E2 ON E.managerId=E2.id GROUP BY E.managerId Having COUNT(E.managerId)>=5;
+INNER JOIN Employee E2 ON E.managerId=E2.id GROUP BY E.managerId Having COUNT(E.managerId)>=5;
